@@ -9,12 +9,27 @@ if ($LASTEXITCODE -ne 0) {
     throw "采集程序运行失败，退出代码：$LASTEXITCODE"
 }
 
-git add -- 'index.html' '滨海新区土地信息.html' 'dashboard_data.json'
+git add --all
+if ($LASTEXITCODE -ne 0) {
+    throw "Git 暂存失败，退出代码：$LASTEXITCODE"
+}
+
 git diff --cached --quiet
-if ($LASTEXITCODE -eq 0) {
+$diffExitCode = $LASTEXITCODE
+if ($diffExitCode -eq 0) {
     exit 0
+}
+if ($diffExitCode -ne 1) {
+    throw "Git 差异检查失败，退出代码：$diffExitCode"
 }
 
 $stamp = Get-Date -Format 'yyyy-MM-dd HH:mm'
 git commit -m "Daily update $stamp"
+if ($LASTEXITCODE -ne 0) {
+    throw "Git 提交失败，退出代码：$LASTEXITCODE"
+}
+
 git push origin main
+if ($LASTEXITCODE -ne 0) {
+    throw "Git 发布失败，退出代码：$LASTEXITCODE"
+}
