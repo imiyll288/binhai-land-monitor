@@ -1,9 +1,9 @@
-name: Daily land data update
+name: Cloud land data test
 
 on:
-  schedule:
-    # GitHub schedules use UTC. 00:30 UTC is 08:30 in China.
-    - cron: "30 0 * * *"
+  # GitHub's overseas runners are currently blocked by both official sources.
+  # Keep a manual trigger so cloud access can be re-tested later without
+  # creating a known-failing scheduled run every day.
   workflow_dispatch:
 
 permissions:
