@@ -7,6 +7,7 @@ import datetime as dt
 import html
 import json
 import re
+import socket
 import sys
 import time
 import urllib.parse
@@ -18,12 +19,34 @@ ROOT = Path(__file__).resolve().parent
 DATA_FILE = ROOT / "dashboard_data.json"
 HTML_FILE = ROOT / "滨海新区土地信息.html"
 INDEX_FILE = ROOT / "index.html"
-USER_AGENT = "BinhaiLandMonitor/1.0 (public-government-information collector)"
+USER_AGENT = (
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+    "AppleWebKit/537.36 (KHTML, like Gecko) "
+    "Chrome/127.0.0.0 Safari/537.36"
+)
+
+
+# GitHub-hosted Linux runners may prefer an unreachable IPv6 route for these
+# government portals. Both sources publish IPv4 records, so use those here.
+_SYSTEM_GETADDRINFO = socket.getaddrinfo
+
+
+def ipv4_getaddrinfo(host, port, family=0, type=0, proto=0, flags=0):
+    return _SYSTEM_GETADDRINFO(host, port, socket.AF_INET, type, proto, flags)
+
+
+socket.getaddrinfo = ipv4_getaddrinfo
 
 
 def request_json(url: str, *, payload: dict | None = None) -> dict:
     data = None
-    headers = {"User-Agent": USER_AGENT, "Accept": "application/json,text/plain,*/*"}
+    parsed = urllib.parse.urlsplit(url)
+    headers = {
+        "User-Agent": USER_AGENT,
+        "Accept": "application/json, text/plain, */*",
+        "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
+        "Referer": f"{parsed.scheme}://{parsed.netloc}/",
+    }
     if payload is not None:
         data = json.dumps(payload, ensure_ascii=False).encode("utf-8")
         headers["Content-Type"] = "application/json;charset=UTF-8"
