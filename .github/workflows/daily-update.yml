@@ -1,0 +1,44 @@
+name: Daily land data update
+
+on:
+  schedule:
+    # GitHub schedules use UTC. 00:30 UTC is 08:30 in China.
+    - cron: "30 0 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-land-data-update
+  cancel-in-progress: false
+
+jobs:
+  collect-and-publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Collect official land data
+        run: python collector.py
+
+      - name: Commit updated data and page
+        run: |
+          if git diff --quiet; then
+            echo "No file changes to publish."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dashboard_data.json index.html "滨海新区土地信息.html"
+          git commit -m "Daily cloud update $(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M')"
+          git push
