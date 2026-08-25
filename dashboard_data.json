@@ -1,6 +1,18 @@
 {
-  "updated_at": "2026-08-24T08:28:22+08:00",
+  "updated_at": "2026-08-25T08:30:33+08:00",
   "records": [
+    {
+      "title": "津滨保（挂）G2026-8号",
+      "code": "津滨保（挂）G2026-8号",
+      "date": "2026-08-24",
+      "category": "出让公告",
+      "url": "https://ggzy.zwfwb.tj.gov.cn/p54/1764754.html",
+      "source": "天津市公共资源交易平台",
+      "sources": [
+        "天津市公共资源交易平台",
+        "天津市规划和自然资源局"
+      ]
+    },
     {
       "title": "津滨生（挂）G2026-5号",
       "code": "津滨生（挂）G2026-5号",
@@ -9,7 +21,8 @@
       "url": "https://ggzy.zwfwb.tj.gov.cn/p54/1755167.html",
       "source": "天津市公共资源交易平台",
       "sources": [
-        "天津市公共资源交易平台"
+        "天津市公共资源交易平台",
+        "天津市规划和自然资源局"
       ]
     },
     {
@@ -20,7 +33,8 @@
       "url": "https://ggzy.zwfwb.tj.gov.cn/p54/1755166.html",
       "source": "天津市公共资源交易平台",
       "sources": [
-        "天津市公共资源交易平台"
+        "天津市公共资源交易平台",
+        "天津市规划和自然资源局"
       ]
     },
     {
@@ -42,7 +56,8 @@
       "url": "https://ggzy.zwfwb.tj.gov.cn/p54/1752827.html",
       "source": "天津市公共资源交易平台",
       "sources": [
-        "天津市公共资源交易平台"
+        "天津市公共资源交易平台",
+        "天津市规划和自然资源局"
       ]
     },
     {
@@ -53,7 +68,8 @@
       "url": "https://ggzy.zwfwb.tj.gov.cn/p54/1752828.html",
       "source": "天津市公共资源交易平台",
       "sources": [
-        "天津市公共资源交易平台"
+        "天津市公共资源交易平台",
+        "天津市规划和自然资源局"
       ]
     },
     {
@@ -196,7 +212,8 @@
       "url": "https://ggzy.zwfwb.tj.gov.cn/p54/1740612.html",
       "source": "天津市公共资源交易平台",
       "sources": [
-        "天津市公共资源交易平台"
+        "天津市公共资源交易平台",
+        "天津市规划和自然资源局"
       ]
     },
     {
@@ -6803,13 +6820,13 @@
   "source_status": {
     "天津市公共资源交易平台": {
       "ok": true,
-      "count": 504,
+      "count": 505,
       "message": ""
     },
     "天津市规划和自然资源局": {
-      "ok": false,
-      "count": 0,
-      "message": "The read operation timed out"
+      "ok": true,
+      "count": 129,
+      "message": ""
     }
   }
 }
