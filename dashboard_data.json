@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-07T08:31:12+08:00",
+  "updated_at": "2026-09-08T08:30:41+08:00",
   "records": [
     {
       "title": "津滨生（挂）G2026-5号",
@@ -6948,9 +6948,9 @@
   ],
   "source_status": {
     "天津市公共资源交易平台": {
-      "ok": true,
-      "count": 516,
-      "message": ""
+      "ok": false,
+      "count": 0,
+      "message": "HTTP Error 502: Bad Gateway"
     },
     "天津市规划和自然资源局": {
       "ok": true,
