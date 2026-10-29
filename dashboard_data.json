@@ -1,6 +1,29 @@
 {
-  "updated_at": "2026-10-28T08:30:28+08:00",
+  "updated_at": "2026-10-29T08:30:19+08:00",
   "records": [
+    {
+      "title": "津滨轻纺（挂）G2026-2号",
+      "code": "津滨轻纺（挂）G2026-2号",
+      "date": "2026-10-28",
+      "category": "成交结果",
+      "url": "https://ggzy.zwfwb.tj.gov.cn/p54/1789316.html",
+      "source": "天津市公共资源交易平台",
+      "sources": [
+        "天津市公共资源交易平台"
+      ]
+    },
+    {
+      "title": "津滨塘（挂）2026-5号",
+      "code": "津滨塘（挂）2026-5号",
+      "date": "2026-10-28",
+      "category": "出让公告",
+      "url": "https://ggzy.zwfwb.tj.gov.cn/p54/1768000.html",
+      "source": "天津市公共资源交易平台",
+      "sources": [
+        "天津市公共资源交易平台",
+        "天津市规划和自然资源局"
+      ]
+    },
     {
       "title": "津滨开（挂）G2026-7号",
       "code": "津滨开（挂）G2026-7号",
@@ -242,18 +265,6 @@
       "date": "2026-09-30",
       "category": "出让公告",
       "url": "https://ggzy.zwfwb.tj.gov.cn/p54/1782212.html",
-      "source": "天津市公共资源交易平台",
-      "sources": [
-        "天津市公共资源交易平台",
-        "天津市规划和自然资源局"
-      ]
-    },
-    {
-      "title": "津滨塘（挂）2026-5号",
-      "code": "津滨塘（挂）2026-5号",
-      "date": "2026-09-30",
-      "category": "出让公告",
-      "url": "https://ggzy.zwfwb.tj.gov.cn/p54/1768000.html",
       "source": "天津市公共资源交易平台",
       "sources": [
         "天津市公共资源交易平台",
@@ -7183,12 +7194,12 @@
   "source_status": {
     "天津市公共资源交易平台": {
       "ok": true,
-      "count": 535,
+      "count": 536,
       "message": ""
     },
     "天津市规划和自然资源局": {
       "ok": true,
-      "count": 139,
+      "count": 140,
       "message": ""
     }
   }
